@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anam Teknik - Distributor Alat Teknik dan Listrik Terpercaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1f2937;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .category-btn {
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover {
+            background-color: #3b82f6;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .category-btn.active {
+            background-color: #1e40af;
+            color: white;
+        }
+
+        .contact-info-card {
+            border-left: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            transform: translateX(5px);
+            background-color: #eff6ff;
+        }
+
+        .animated-bg {
+            animation: gradientShift 8s ease infinite;
+            background: linear-gradient(-45deg, #1e40af, #3b82f6, #60a5fa, #93c5fd);
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        AT
+                    </div>
+                    <span class="text-xl font-bold text-blue-600">Anam Teknik</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-blue-600 font-medium hover:text-blue-800 transition">Home</a>
+                    <a href="#products" class="text-gray-600 hover:text-blue-600 transition">Produk</a>
+                    <a href="#categories" class="text-gray-600 hover:text-blue-600 transition">Kategori</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition">Tentang</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Kontak</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">
+                        <i class="fas fa-shopping-cart mr-2"></i>Cart
+                    </button>
+                    <button class="md:hidden text-gray-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Solusi Lengkap Alat Teknik & Listrik Profesional
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100">
+                        Distributor terpercaya untuk semua kebutuhan teknik dan listrik Anda. Kualitas terjamin, harga kompetitif, dan pengiriman cepat.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition shadow-lg">
+                            <i class="fas fa-shopping-basket mr-2"></i>Belanja Sekarang
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">
+                            <i class="fas fa-info-circle mr-2"></i>Info Produk
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cf5db526-2b47-465a-bebb-ffcbb7414a79.png" alt="Display produk alat teknik dan listrik modern dengan berbagai peralatan elektronik dan perkakas yang tersusun rapi" class="rounded-lg shadow-2xl floating" />
+                        <div class="absolute -bottom-4 -right-4 bg-white text-blue-600 p-4 rounded-lg shadow-lg">
+                            <div class="text-sm font-semibold">1000+</div>
+                            <div class="text-xs">Produk Tersedia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Produk Unggulan</h2>
+                <p class="text-gray-600 max-w 2xl mx-auto">Temukan produk-produk terbaik kami dengan kualitas terjamin dan harga bersaing</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9e2a9e6e-a8e2-4208-86ed-782c641815f4.png" alt="Bor listrik profesional dengan berbagai mata bor dan aksesori lengkap dalam kemasan rapi" class="w-full h-48 object-cover" />
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                            HOT
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg mb-2">Bor Listrik Profesional</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(4.8)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600">Rp 450.000</span>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d9d0092b-0d5a-46a0-a93d-2a8c84d1785b.png" alt="Set obeng elektrik lengkap dengan berbagai mata obeng dan baterai lithium dalam tas carrying case" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg mb-2">Set Obeng Elektrik Lengkap</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(5.0)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600">Rp 325.000</span>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/602bc101-5a51-4e98-8aae-2a757822541d.png" alt="Kabel listrik rol dengan berbagai ukuran dan warna untuk instalasi rumah dan industri" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg mb-2">Kabel Listrik Roll 50m</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(4.2)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600">Rp 280.000</span>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7f6f8735-ddc4-4013-acb3-e94faf5d3896.png" alt="Multimeter digital profesional dengan layar LCD besar dan berbagai fungsi pengukuran listrik" class="w-full h-48 object-cover" />
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
+                            NEW
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg mb-2">Multimeter Digital Pro</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">(4.7)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600">Rp 890.000</span>
+                            <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-md">
+                    <i class="fas fa-eye mr-2"></i>Lihat Semua Produk
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Kategori Produk</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Jelajahi berbagai kategori produk alat teknik dan listrik yang kami sediakan</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                <button class="category-btn active bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-tools text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Perkakas</h3>
+                </button>
+                <button class="category-btn bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-bolt text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Listrik</h3>
+                </button>
+                <button class="category-btn bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-wrench text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Pipa & Sambungan</h3>
+                </button>
+                <button class="category-btn bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-cogs text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Mesin & Engine</h3>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <button class="category-btn bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-paint-roller text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Cat & Finishing</h3>
+                </button>
+                <button class="category-btn bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-hammer text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Bangunan</h3>
+                </button>
+                <button class="category-btn bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-fan text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Ventilasi</h3>
+                </button>
+                <button class="category-btn bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-toolbox text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Aksesoris</h3>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/69ca2518-1733-426b-b277-d37e4c4ae5a4.png" alt="Toko Anam Teknik dengan rak-rak penuh berbagai alat teknik dan listrik dengan suasana profesional dan terorganisir" class="rounded-lg shadow-xl" />
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Tentang Anam Teknik</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Anam Teknik telah menjadi pilihan terpercaya dalam menyediakan alat teknik dan listrik berkualitas tinggi sejak tahun 2010. Kami berkomitmen untuk menyediakan produk-produk terbaik dengan harga yang kompetitif.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <span>Produk berkualitas dengan garansi resmi</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <span>Pengiriman cepat ke seluruh Indonesia</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <span>Pelayanan customer service 24/7</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <span>Support teknis dan konsultasi gratis</span>
+                        </div>
+                    </div>
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                        <i class="fas fa-book-open mr-2"></i>Selengkapnya
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kami siap membantu Anda dalam memenuhi kebutuhan alat teknik dan listrik</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="contact-info-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Alamat</h3>
+                    <p class="text-gray-600">Jl. Raya Teknik No. 123, Jakarta Selatan, DKI Jakarta 12560</p>
+                </div>
+
+                <div class="contact-info-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-phone text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Telepon</h3>
+                    <p class="text-gray-600">(021) 7654-3210</p>
+                    <p class="text-gray-600">+62 812-3456-7890</p>
+                </div>
+
+                <div class="contact-info-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Email</h3>
+                    <p class="text-gray-600">info@anamt
